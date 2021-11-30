@@ -1,0 +1,14 @@
+def findMax(self,root):
+        if root==None:
+            return -1
+        r=self.findMax(root.right)
+        l=self.findMax(root.left)
+        return max(r,l,root.data)
+        
+        #code here
+    def findMin(self,root):
+        if root==None:
+            return 100000
+        r=self.findMin(root.right)
+        l=self.findMin(root.left)
+        return min(r,l,root.data)
