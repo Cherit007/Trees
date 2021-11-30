@@ -1,0 +1,12 @@
+def symmetry(self,root1,root2):
+        if root1==None and root2==None:
+            return True
+        if root1 is not None and root2 is not None: 
+            if root1.data==root2.data:
+                return (self.symmetry(root1.left,root2.right)) and (self.symmetry(root1.right,root2.left))
+    
+        return False
+    
+    def isSymmetric(self, root):
+        # Your Code Here
+        return self.symmetry(root,root)
