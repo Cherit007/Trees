@@ -1,0 +1,21 @@
+def swap(self,root):
+        if root is None:
+            return
+ 
+        temp = root.left
+        root.left = root.right
+        root.right = temp
+ 
+ 
+
+    def mirror(self,root):
+      
+        if root ==None:
+            return
+ 
+        self.mirror(root.left)
+        self.mirror(root.right)
+        self.swap(root)
+        
+        
+     print in inorder traversal
