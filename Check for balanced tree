@@ -1,0 +1,25 @@
+#difference of height of left sub tree and right sub tree must be less than equal to 1
+
+def height(self,root):
+        if root==None:
+            return 0
+        rx=self.height(root.right)
+        lx=self.height(root.left)
+        if rx>lx:
+            return 1+rx
+        else:
+            return 1+lx
+    
+    def isBalanced(self,root):
+        if root==None:
+            return True
+        lh=0
+        rh=0
+        
+        lh=self.height(root.left)
+        rh=self.height(root.right)
+        l=self.isBalanced(root.left)
+        r=self.isBalanced(root.right)
+        if abs(lh-rh)<=1:
+            return l and r
+        return False
