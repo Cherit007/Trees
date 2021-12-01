@@ -1,0 +1,14 @@
+def __init__(self):
+        self.l=[]
+     
+	def sortedArrayToBST(self, nums):
+	    if len(nums)==0:
+	        return 
+	    mid=(len(nums)-1)//2
+	    
+	    self.l.append(nums[mid])
+	    self.sortedArrayToBST(nums[:mid])
+	    self.sortedArrayToBST(nums[mid+1:])
+	    
+	    if len(nums)==len(self.l):
+	        return self.l
