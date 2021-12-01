@@ -1,0 +1,19 @@
+ def checkisBST(self,node, minKey, maxKey):
+ 
+        if node is None:
+            return 1
+        if node.data <= minKey or node.data >= maxKey:
+            return 0
+     
+        return self.checkisBST(node.left, minKey, node.data) and self.checkisBST(node.right, node.data, maxKey)
+     
+ 
+# Function to determine whether a given binary tree is a BST
+    def isBST(self,root):
+     
+        if self.checkisBST(root, -10000000, 10000000):
+            return 1
+        else:
+            return 0
+            
+        
