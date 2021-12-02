@@ -1,0 +1,22 @@
+ 
+def gcd1(a,b):
+    i=1
+    while i<=a and i<=b:
+        if a%i==0 and b%i==0:
+            res=i
+        i+=1
+    return res
+    
+def helper(l,root,level):
+    if root==None:
+        return
+    if level==len(l):
+        l.append(root.data)
+    else:
+        l[level]=gcd1(l[level],root.data)
+    helper(l,root.left,level+1)
+    helper(l,root.right,level+1)
+def gcd(root):
+    l=[]
+    helper(l,root,0)
+    return max(l)
