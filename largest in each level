@@ -1,0 +1,17 @@
+def helper(self,l,root,level):
+        if root==None:
+            return
+        
+        if level==len(l):
+            l.append(root.data)
+        else:
+            l[level]=max(l[level],root.data)
+            
+        self.helper(l,root.left,level+1)
+        self.helper(l,root.right,level+1)
+    def largestValues(self, root):
+        #code here
+        l=[]
+        self.helper(l,root,0)
+        return l
+        
